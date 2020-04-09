@@ -2,9 +2,9 @@
 bot for corona virus
 
 # here are the screenshots 
-![Image description](link-to-image)
+![Image description](https://github.com/chaudharyvineet/amazon-lex-covid/blob/master/29649fd0-4dad-4582-8b10-a93e99d2713c.jpg)
 
-![Image description](link-to-image)
+![Image description](https://github.com/chaudharyvineet/amazon-lex-covid/blob/master/4ef88954-df48-4a0f-998c-1806998a11bc.jpg)
 
 # error
 in place of json data 
