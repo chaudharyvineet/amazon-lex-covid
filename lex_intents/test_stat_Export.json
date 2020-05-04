@@ -1,0 +1,29 @@
+{
+  "metadata": {
+    "schemaVersion": "1.0",
+    "importType": "LEX",
+    "importFormat": "JSON"
+  },
+  "resource": {
+    "name": "test_stat",
+    "version": "3",
+    "fulfillmentActivity": {
+      "codeHook": {
+        "uri": "arn:aws:lambda:us-east-1:126276420458:function:testapiend1",
+        "messageVersion": "1.0"
+      },
+      "type": "CodeHook"
+    },
+    "sampleUtterances": [
+      "covid",
+      "deaths",
+      "confirmed",
+      "cases",
+      "status",
+      "tell me",
+      "situation"
+    ],
+    "slots": [],
+    "slotTypes": []
+  }
+}

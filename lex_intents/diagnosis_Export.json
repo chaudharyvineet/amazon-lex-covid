@@ -1,0 +1,562 @@
+{
+  "metadata": {
+    "schemaVersion": "1.0",
+    "importType": "LEX",
+    "importFormat": "JSON"
+  },
+  "resource": {
+    "name": "diagnosis",
+    "version": "26",
+    "fulfillmentActivity": {
+      "codeHook": {
+        "uri": "arn:aws:lambda:us-east-1:126276420458:function:covid",
+        "messageVersion": "1.0"
+      },
+      "type": "CodeHook"
+    },
+    "sampleUtterances": [
+      "hi",
+      "hey",
+      "hello"
+    ],
+    "slots": [
+      {
+        "sampleUtterances": [],
+        "slotType": "abroad",
+        "slotTypeVersion": "1",
+        "obfuscationSetting": "NONE",
+        "slotConstraint": "Required",
+        "valueElicitationPrompt": {
+          "messages": [
+            {
+              "contentType": "PlainText",
+              "content": "Have you been abroad until recently?"
+            }
+          ],
+          "responseCard": "{\"version\":1,\"contentType\":\"application/vnd.amazonaws.card.generic\",\"genericAttachments\":[{\"buttons\":[{\"text\":\"Yes\",\"value\":\"Yes\"},{\"text\":\"No\",\"value\":\"No\"}]}]}",
+          "maxAttempts": 2
+        },
+        "priority": 16,
+        "name": "abroad"
+      },
+      {
+        "sampleUtterances": [],
+        "slotType": "age",
+        "slotTypeVersion": "1",
+        "obfuscationSetting": "NONE",
+        "slotConstraint": "Required",
+        "valueElicitationPrompt": {
+          "messages": [
+            {
+              "contentType": "PlainText",
+              "content": "How old are you?"
+            }
+          ],
+          "responseCard": "{\"version\":1,\"contentType\":\"application/vnd.amazonaws.card.generic\",\"genericAttachments\":[{\"subTitle\":\"Select your age group\",\"title\":\"Age\",\"buttons\":[{\"text\":\"Under 18 years old.\",\"value\":\"Under 18 years old.\"},{\"text\":\"Between 18 and 35 years old.\",\"value\":\"Between 18 and 35 years old.\"},{\"text\":\"Between 36 and 65 years old.\",\"value\":\"Between 36 and 65 years old.\"},{\"text\":\"Over 65 years old.\",\"value\":\"Over 65 years old.\"}]}]}",
+          "maxAttempts": 2
+        },
+        "priority": 4,
+        "name": "age"
+      },
+      {
+        "sampleUtterances": [],
+        "slotType": "breath",
+        "slotTypeVersion": "1",
+        "obfuscationSetting": "NONE",
+        "slotConstraint": "Required",
+        "valueElicitationPrompt": {
+          "messages": [
+            {
+              "contentType": "PlainText",
+              "content": "Do you have shortness of breath?"
+            }
+          ],
+          "responseCard": "{\"version\":1,\"contentType\":\"application/vnd.amazonaws.card.generic\",\"genericAttachments\":[{\"buttons\":[{\"text\":\"Yes\",\"value\":\"Yes\"},{\"text\":\"No\",\"value\":\"No\"}]}]}",
+          "maxAttempts": 2
+        },
+        "priority": 14,
+        "name": "breath"
+      },
+      {
+        "sampleUtterances": [],
+        "slotType": "commonslot",
+        "slotTypeVersion": "1",
+        "obfuscationSetting": "NONE",
+        "slotConstraint": "Optional",
+        "valueElicitationPrompt": {
+          "messages": [
+            {
+              "contentType": "PlainText",
+              "content": "Click status to know more info on covid-19."
+            }
+          ],
+          "responseCard": "{\"version\":1,\"contentType\":\"application/vnd.amazonaws.card.generic\",\"genericAttachments\":[{\"subTitle\":\"\",\"title\":\"\",\"buttons\":[{\"text\":\"Status\",\"value\":\"continue\"}]}]}",
+          "maxAttempts": 2
+        },
+        "priority": 17,
+        "name": "commonslot"
+      },
+      {
+        "sampleUtterances": [],
+        "slotType": "contact",
+        "slotTypeVersion": "1",
+        "obfuscationSetting": "NONE",
+        "slotConstraint": "Required",
+        "valueElicitationPrompt": {
+          "messages": [
+            {
+              "contentType": "PlainText",
+              "content": "Did you have closer contact to person having similar symptoms?"
+            }
+          ],
+          "responseCard": "{\"version\":1,\"contentType\":\"application/vnd.amazonaws.card.generic\",\"genericAttachments\":[{\"buttons\":[{\"text\":\"Yes\",\"value\":\"Yes\"},{\"text\":\"No\",\"value\":\"No\"}]}]}",
+          "maxAttempts": 2
+        },
+        "priority": 15,
+        "name": "contact"
+      },
+      {
+        "sampleUtterances": [],
+        "slotType": "cough",
+        "slotTypeVersion": "1",
+        "obfuscationSetting": "NONE",
+        "slotConstraint": "Required",
+        "valueElicitationPrompt": {
+          "messages": [
+            {
+              "contentType": "PlainText",
+              "content": "Do you have dry cough?"
+            }
+          ],
+          "responseCard": "{\"version\":1,\"contentType\":\"application/vnd.amazonaws.card.generic\",\"genericAttachments\":[{\"buttons\":[{\"text\":\"Yes\",\"value\":\"Yes\"},{\"text\":\"No\",\"value\":\"No\"}]}]}",
+          "maxAttempts": 2
+        },
+        "priority": 8,
+        "name": "cough"
+      },
+      {
+        "sampleUtterances": [],
+        "slotType": "fever",
+        "slotTypeVersion": "1",
+        "obfuscationSetting": "NONE",
+        "slotConstraint": "Required",
+        "valueElicitationPrompt": {
+          "messages": [
+            {
+              "contentType": "PlainText",
+              "content": "Are you suffering from fever?"
+            }
+          ],
+          "responseCard": "{\"version\":1,\"contentType\":\"application/vnd.amazonaws.card.generic\",\"genericAttachments\":[{\"buttons\":[{\"text\":\"Yes\",\"value\":\"Yes\"},{\"text\":\"No\",\"value\":\"No\"}]}]}",
+          "maxAttempts": 2
+        },
+        "priority": 7,
+        "name": "fever"
+      },
+      {
+        "sampleUtterances": [],
+        "slotType": "gender",
+        "slotTypeVersion": "1",
+        "obfuscationSetting": "NONE",
+        "slotConstraint": "Required",
+        "valueElicitationPrompt": {
+          "messages": [
+            {
+              "contentType": "PlainText",
+              "content": "Are you male or female?"
+            }
+          ],
+          "responseCard": "{\"version\":1,\"contentType\":\"application/vnd.amazonaws.card.generic\",\"genericAttachments\":[{\"subTitle\":\"Click on one\",\"title\":\"Gender\",\"buttons\":[{\"text\":\"Male\",\"value\":\"Male\"},{\"text\":\"Female\",\"value\":\"Female\"}]}]}",
+          "maxAttempts": 2
+        },
+        "priority": 3,
+        "name": "gender"
+      },
+      {
+        "sampleUtterances": [],
+        "slotType": "headache",
+        "slotTypeVersion": "1",
+        "obfuscationSetting": "NONE",
+        "slotConstraint": "Required",
+        "valueElicitationPrompt": {
+          "messages": [
+            {
+              "contentType": "PlainText",
+              "content": "Do you have headache"
+            }
+          ],
+          "responseCard": "{\"version\":1,\"contentType\":\"application/vnd.amazonaws.card.generic\",\"genericAttachments\":[{\"buttons\":[{\"text\":\"Yes\",\"value\":\"Yes\"},{\"text\":\"No\",\"value\":\"No\"}]}]}",
+          "maxAttempts": 2
+        },
+        "priority": 12,
+        "name": "headache"
+      },
+      {
+        "sampleUtterances": [],
+        "slotType": "jointpain",
+        "slotTypeVersion": "1",
+        "obfuscationSetting": "NONE",
+        "slotConstraint": "Required",
+        "valueElicitationPrompt": {
+          "messages": [
+            {
+              "contentType": "PlainText",
+              "content": "Do you have muscle or joint pain?"
+            }
+          ],
+          "responseCard": "{\"version\":1,\"contentType\":\"application/vnd.amazonaws.card.generic\",\"genericAttachments\":[{\"buttons\":[{\"text\":\"Yes\",\"value\":\"Yes\"},{\"text\":\"No\",\"value\":\"No\"}]}]}",
+          "maxAttempts": 2
+        },
+        "priority": 13,
+        "name": "jointpain"
+      },
+      {
+        "sampleUtterances": [],
+        "slotType": "AMAZON.US_FIRST_NAME",
+        "obfuscationSetting": "NONE",
+        "slotConstraint": "Required",
+        "valueElicitationPrompt": {
+          "messages": [
+            {
+              "contentType": "PlainText",
+              "content": "Hey, what is your name?"
+            }
+          ],
+          "maxAttempts": 2
+        },
+        "priority": 1,
+        "name": "name"
+      },
+      {
+        "sampleUtterances": [],
+        "slotType": "nausea",
+        "slotTypeVersion": "1",
+        "obfuscationSetting": "NONE",
+        "slotConstraint": "Required",
+        "valueElicitationPrompt": {
+          "messages": [
+            {
+              "contentType": "PlainText",
+              "content": "Do you have nausea?"
+            }
+          ],
+          "responseCard": "{\"version\":1,\"contentType\":\"application/vnd.amazonaws.card.generic\",\"genericAttachments\":[{\"buttons\":[{\"text\":\"Yes\",\"value\":\"Yes\"},{\"text\":\"No\",\"value\":\"No\"}]}]}",
+          "maxAttempts": 2
+        },
+        "priority": 11,
+        "name": "nausea"
+      },
+      {
+        "sampleUtterances": [],
+        "slotType": "noofdays",
+        "slotTypeVersion": "1",
+        "obfuscationSetting": "NONE",
+        "slotConstraint": "Required",
+        "valueElicitationPrompt": {
+          "messages": [
+            {
+              "contentType": "PlainText",
+              "content": "When did you recognise the first symptoms?"
+            }
+          ],
+          "responseCard": "{\"version\":1,\"contentType\":\"application/vnd.amazonaws.card.generic\",\"genericAttachments\":[{\"buttons\":[{\"text\":\"Today\",\"value\":\"Today\"},{\"text\":\"A few days ago.\",\"value\":\"A few days ago\"},{\"text\":\"A week ago.\",\"value\":\"A week ago\"},{\"text\":\"More than one week ago.\",\"value\":\"More than one week ago\"}]}]}",
+          "maxAttempts": 2
+        },
+        "priority": 5,
+        "name": "noofdays"
+      },
+      {
+        "sampleUtterances": [],
+        "slotType": "runnynose",
+        "slotTypeVersion": "1",
+        "obfuscationSetting": "NONE",
+        "slotConstraint": "Required",
+        "valueElicitationPrompt": {
+          "messages": [
+            {
+              "contentType": "PlainText",
+              "content": "Do you have runny nose?"
+            }
+          ],
+          "responseCard": "{\"version\":1,\"contentType\":\"application/vnd.amazonaws.card.generic\",\"genericAttachments\":[{\"buttons\":[{\"text\":\"Yes\",\"value\":\"Yes\"},{\"text\":\"No\",\"value\":\"No\"}]}]}",
+          "maxAttempts": 2
+        },
+        "priority": 9,
+        "name": "runnynose"
+      },
+      {
+        "sampleUtterances": [],
+        "slotType": "sorethroat",
+        "slotTypeVersion": "1",
+        "obfuscationSetting": "NONE",
+        "slotConstraint": "Required",
+        "valueElicitationPrompt": {
+          "messages": [
+            {
+              "contentType": "PlainText",
+              "content": "Do you have sore throat?"
+            }
+          ],
+          "responseCard": "{\"version\":1,\"contentType\":\"application/vnd.amazonaws.card.generic\",\"genericAttachments\":[{\"buttons\":[{\"text\":\"Yes\",\"value\":\"Yes\"},{\"text\":\"No\",\"value\":\"No\"}]}]}",
+          "maxAttempts": 2
+        },
+        "priority": 10,
+        "name": "sorethroat"
+      },
+      {
+        "sampleUtterances": [],
+        "slotType": "symptoms",
+        "slotTypeVersion": "1",
+        "obfuscationSetting": "NONE",
+        "slotConstraint": "Required",
+        "valueElicitationPrompt": {
+          "messages": [
+            {
+              "contentType": "PlainText",
+              "content": "Describe how symptoms have developed over time?"
+            }
+          ],
+          "responseCard": "{\"version\":1,\"contentType\":\"application/vnd.amazonaws.card.generic\",\"genericAttachments\":[{\"buttons\":[{\"text\":\"Symptoms began abruptly.\",\"value\":\"Symptoms began abruptly.\"},{\"text\":\"Symptoms grew day by day.\",\"value\":\"Symptoms grew slowly day by day.\"}]}]}",
+          "maxAttempts": 2
+        },
+        "priority": 6,
+        "name": "symptoms"
+      },
+      {
+        "sampleUtterances": [],
+        "slotType": "welcome",
+        "slotTypeVersion": "1",
+        "obfuscationSetting": "NONE",
+        "slotConstraint": "Required",
+        "valueElicitationPrompt": {
+          "messages": [
+            {
+              "contentType": "PlainText",
+              "content": "Hello {name}, welcome to covid-19 chatbot"
+            }
+          ],
+          "responseCard": "{\"version\":1,\"contentType\":\"application/vnd.amazonaws.card.generic\",\"genericAttachments\":[{\"subTitle\":\"This bot is for informational purposes only.\",\"title\":\"Legal note\",\"buttons\":[{\"text\":\"Continue\",\"value\":\"Continue\"}]}]}",
+          "maxAttempts": 2
+        },
+        "priority": 2,
+        "name": "welcome"
+      }
+    ],
+    "slotTypes": [
+      {
+        "name": "abroad",
+        "version": "1",
+        "enumerationValues": [
+          {
+            "value": "No"
+          },
+          {
+            "value": "Yes"
+          }
+        ],
+        "valueSelectionStrategy": "ORIGINAL_VALUE"
+      },
+      {
+        "name": "commonslot",
+        "version": "1",
+        "enumerationValues": [
+          {
+            "value": "continue"
+          }
+        ],
+        "valueSelectionStrategy": "ORIGINAL_VALUE"
+      },
+      {
+        "name": "gender",
+        "version": "1",
+        "enumerationValues": [
+          {
+            "value": "Male"
+          },
+          {
+            "value": "Female"
+          }
+        ],
+        "valueSelectionStrategy": "ORIGINAL_VALUE"
+      },
+      {
+        "name": "noofdays",
+        "version": "1",
+        "enumerationValues": [
+          {
+            "value": "Today"
+          },
+          {
+            "value": "A few days ago"
+          },
+          {
+            "value": "More than one week ago"
+          },
+          {
+            "value": "A week ago"
+          }
+        ],
+        "valueSelectionStrategy": "ORIGINAL_VALUE"
+      },
+      {
+        "name": "fever",
+        "version": "1",
+        "enumerationValues": [
+          {
+            "value": "No"
+          },
+          {
+            "value": "Yes"
+          }
+        ],
+        "valueSelectionStrategy": "ORIGINAL_VALUE"
+      },
+      {
+        "name": "runnynose",
+        "version": "1",
+        "enumerationValues": [
+          {
+            "value": "No"
+          },
+          {
+            "value": "Yes"
+          }
+        ],
+        "valueSelectionStrategy": "ORIGINAL_VALUE"
+      },
+      {
+        "name": "cough",
+        "version": "1",
+        "enumerationValues": [
+          {
+            "value": "No"
+          },
+          {
+            "value": "Yes"
+          }
+        ],
+        "valueSelectionStrategy": "ORIGINAL_VALUE"
+      },
+      {
+        "name": "nausea",
+        "version": "1",
+        "enumerationValues": [
+          {
+            "value": "No"
+          },
+          {
+            "value": "Yes"
+          }
+        ],
+        "valueSelectionStrategy": "ORIGINAL_VALUE"
+      },
+      {
+        "name": "breath",
+        "version": "1",
+        "enumerationValues": [
+          {
+            "value": "No"
+          },
+          {
+            "value": "Yes"
+          }
+        ],
+        "valueSelectionStrategy": "ORIGINAL_VALUE"
+      },
+      {
+        "name": "symptoms",
+        "version": "1",
+        "enumerationValues": [
+          {
+            "value": "Symptoms began abruptly."
+          },
+          {
+            "value": "Symptoms grew slowly day by day."
+          }
+        ],
+        "valueSelectionStrategy": "ORIGINAL_VALUE"
+      },
+      {
+        "name": "jointpain",
+        "version": "1",
+        "enumerationValues": [
+          {
+            "value": "No"
+          },
+          {
+            "value": "Yes"
+          }
+        ],
+        "valueSelectionStrategy": "ORIGINAL_VALUE"
+      },
+      {
+        "name": "sorethroat",
+        "version": "1",
+        "enumerationValues": [
+          {
+            "value": "No"
+          },
+          {
+            "value": "Yes"
+          }
+        ],
+        "valueSelectionStrategy": "ORIGINAL_VALUE"
+      },
+      {
+        "name": "contact",
+        "version": "1",
+        "enumerationValues": [
+          {
+            "value": "No"
+          },
+          {
+            "value": "Yes"
+          }
+        ],
+        "valueSelectionStrategy": "ORIGINAL_VALUE"
+      },
+      {
+        "name": "headache",
+        "version": "1",
+        "enumerationValues": [
+          {
+            "value": "No"
+          },
+          {
+            "value": "Yes"
+          }
+        ],
+        "valueSelectionStrategy": "ORIGINAL_VALUE"
+      },
+      {
+        "name": "welcome",
+        "version": "1",
+        "enumerationValues": [
+          {
+            "value": "Continue"
+          }
+        ],
+        "valueSelectionStrategy": "ORIGINAL_VALUE"
+      },
+      {
+        "name": "age",
+        "version": "1",
+        "enumerationValues": [
+          {
+            "value": "Under 18 years old."
+          },
+          {
+            "value": "Between 18 and 35 years old."
+          },
+          {
+            "value": "Over 65 years old."
+          },
+          {
+            "value": "Between 36 and 65 years old."
+          }
+        ],
+        "valueSelectionStrategy": "ORIGINAL_VALUE"
+      }
+    ]
+  }
+}
