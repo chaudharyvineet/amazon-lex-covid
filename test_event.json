@@ -1,0 +1,19 @@
+{
+  "messageVersion": "1.0",
+  "invocationSource": "FulfillmentCodeHook",
+  "userId": "user-1",
+  "sessionAttributes": {},
+  "bot": {
+    "name": "covid_bot",
+    "alias": "$LATEST",
+    "version": "$LATEST"
+  },
+  "outputDialogMode": "Text",
+  "currentIntent": {
+    "name": "status",
+    "slots": {
+      "data": "here"
+    },
+    "confirmationStatus": "None"
+  }
+}
